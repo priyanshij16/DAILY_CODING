@@ -1,0 +1,13 @@
+237. Delete Node in a Linked List
+
+
+class Solution {
+public:
+    void deleteNode(ListNode* node) {
+     
+      ListNode* next=node-> next;
+      *node= *next;
+      delete next;
+      
+    }
+};
