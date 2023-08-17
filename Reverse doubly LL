@@ -1,0 +1,17 @@
+# Reverse a doubly link list :
+
+>> 10 20 30    >>> 30 20 10
+#idea is to just swap both next and previous pointer 
+
+Node *curr = head;
+Node*temp;
+Node *prev= NULL;
+while( curr!= null)
+  {
+    temp= curr->next;  // 10 points to null
+  curr-next= prev;  // to nulll
+  prev= curr;
+  curr= temp;
+  }
+return prev;
+
