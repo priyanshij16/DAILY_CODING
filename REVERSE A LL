@@ -1,0 +1,11 @@
+1 2 3 >> 3 2 1 
+
+list*dummy;
+while(head!=null){
+
+  list *temp= head->next;
+  head->next= dummy ;
+  dummy= head;
+  head= temp;
+  
+  }
