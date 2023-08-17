@@ -1,0 +1,14 @@
+## DELETE LAST NODE IN DOUBLY LINK LIST :
+
+ >> 10 20 30 
+  >> 10 20 
+
+// code 
+if(head ==NULL|| head->next !=null)
+return null;
+
+  else
+  curr-> prev->next= null;
+   delete curr;
+
+return head;
