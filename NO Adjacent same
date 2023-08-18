@@ -1,0 +1,4 @@
+ unsigned int num = n^(n>>1);
+    num ^=(num>>1);
+
+    return !(num&(num-1));
