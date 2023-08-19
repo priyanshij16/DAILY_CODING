@@ -1,0 +1,26 @@
+## given link list is palindrome 
+   1 >>2>> 3>>
+
+if(head== NULL || head-> next!=  NULL){
+ return true;
+}
+Node*slow= head;
+Node *fast= head;
+while( fast!= null && fast->next!= NULL){
+slow= slow->next;
+fast= fast->next->next;
+}
+
+slow->next=  reverse( slow->next);
+slow= slow->next;
+
+while(slow!= NULL){
+ if(head->val != slow->vla)
+return  FASLSE;
+
+head=head->next;
+slow= slow->next;
+}
+return true;
+}
+
