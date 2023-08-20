@@ -1,0 +1,21 @@
+## Delete nth node from Last
+ex >>  1 2 3 4 5   , n= 2
+o/p >>  1 2 3 5
+
+ListNode * start = new ListNode();
+        start -> next = head;
+        ListNode* fast = start;
+        ListNode* slow = start;     
+
+        for(int i = 1; i <= n; ++i)
+            fast = fast->next;
+    
+        while(fast->next != NULL)
+        {
+            fast = fast->next;
+            slow = slow->next;
+        }
+        
+        slow->next = slow->next->next;
+        
+        return start->next;
