@@ -1,0 +1,19 @@
+##2831. Find the Longest Equal Subarray
+
+Input: nums = [1,1,2,2,1,1], k = 2
+Output: 4
+>>>
+
+int longestEqualSubarray(vector<int>& nums, int k) {
+        
+        int maxf=0;
+        unordered_map<int,int> map;
+       int i=0;
+        for(int j=0;j<nums.size(); j++){
+            maxf= max(maxf, ++map[nums[j]]);
+            if(j-i+1- maxf>k)
+            {
+                --map[nums[i++] ];
+            }
+        }
+        return maxf;
