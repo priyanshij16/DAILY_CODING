@@ -1,0 +1,11 @@
+2828. Check if a String Is an Acronym of Words
+
+   bool isAcronym(vector<string>& words, string s) {
+
+     string w="";
+     for(auto x: words){
+         w+= x[0];
+     }   
+     return w==s;
+    }
+};
