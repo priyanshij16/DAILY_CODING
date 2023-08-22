@@ -1,0 +1,50 @@
+
+Input:
+List 1 = [1,3,1,2,4], List 2 = [3,2,4]
+Output:
+2
+
+>> APPROACH 1: TC=O(mn)
+# we just have to traverse head1 until it meets condn >>(head1== head2) then stop
+
+while(head2!= NULL)
+{
+   Node*temp=head1;    // will traverse this 
+   while(temp!=NULL)
+{
+   if(temp== head2)
+   return head2;
+  temp= temp->next;
+}
+ head2= head2->next;
+}
+return NULL;
+
+ ## 2nd APPROACH TC=O(n+m ) but space =O(n)
+ >> we will use hashmaps data structure as we are going to use set 
+
+unordered_set<Node*> st;
+
+while(head1 !=  NULL)
+{
+ st.insert(head1->val);
+head1= head1->next;
+}
+
+ while(head2  != NULL)
+{
+   if(st.find( head2) != st.end()
+   return head2;
+}
+return NULL;
+
+ ## BEST APPROACH tc= O(n)
+
+ListNode *a= headA;
+        ListNode *b= headB;
+
+        while(a!= b){
+            a=a== NULL?headB:a->next;
+             b=b== NULL?headA:b->next;
+        }
+        return a;
