@@ -1,0 +1,13 @@
+ ## REVERSE A LL:
+>> 1 2 3 o/p > 3 2 1
+ // just make a dummy node and initalise ptr with next of head
+
+Node *dummy= NULL;
+while( head!=NULL){
+ 
+  Node *temp= head->next;
+   head->next = dummy;
+  dummy= head;
+  head= temp;
+}
+return dummy;
