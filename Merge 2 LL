@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+
+/************************************************************
+************************************************************/
+
+Node<int>* sortTwoLists(Node<int>* first, Node<int>* second)
+{
+    // Write your code here.
+   Node<int>* p= first;
+  Node<int>* q= second;
+  Node<int>* dummy= new Node<int>(-1);
+  Node<int>* r= dummy;
+
+while(p!= NULL && q!= NULL){
+    
+      if(p->data > q->data){
+           r->next= q;
+           q=q->next;
+ }  
+    else
+    {   r->next= p;
+        p=p->next;
+    }
+       r= r->next;
+   }
+   
+   while(p!= NULL){
+       r->next= p;
+       p=p->next;
+       r=r->next;
+ }
+    while (q!= NULL)
+    {
+       r->next= q;
+       q=q->next;
+       r=r->next;
+       }
+   return dummy->next;
+
+}
