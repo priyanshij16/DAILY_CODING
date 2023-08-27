@@ -1,0 +1,26 @@
+AMAZING STRING::
+
+
+string amazingStrings(string first, string second,string third) {
+    // Write your code here.
+    int count1[26]={0};
+    int c2[26]={0};
+
+    for(auto x: first){
+        count1[x-'A']++;
+
+    }
+        for(auto x: second){
+        count1[x-'A']++;
+
+    }
+     for(auto x: third){
+        c2[x-'A']++;
+
+    }
+    for(int i=0;i<26;i++){
+        if(count1[i]!=c2[i])
+        return "NO";
+    }
+    return "YES";
+}
