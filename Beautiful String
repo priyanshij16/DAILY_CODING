@@ -1,0 +1,17 @@
+Beautiful String:
+ex: 0000 >> 2
+
+
+int makeBeautiful(string str) {
+	// Write your code here
+	int count1=0,count2=0;
+	 int n= str.size();
+	for(int i=0;i<n;i++){
+        if (i % 2 == 0 && str[i] == '1' || i % 2 != 0 && str[i] == '0') {
+            count1++;
+          } else {
+            count2++;
+          }
+        }
+   return min(count2,count1);
+}
