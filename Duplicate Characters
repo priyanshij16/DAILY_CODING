@@ -1,0 +1,35 @@
+Duplicate Characters :
+## APPROACH 1  TC O(N) SC O(N)
+
+void printDups(string str)
+{
+    unordered_map<char, int> count;
+    for (int i = 0; i < str.length(); i++) {
+       
+        count[str[i]]++;
+    }
+    for (auto it : count) {
+     
+        if (it.second > 1)
+            cout << it.first << ", count = " << it.second
+                 << "\n";
+    }
+}
+
+## 2 nd approach just sort then compare 
+
+sort(str.begin(), str.end());
+
+	
+	for (int i = 0; i < len; i++) {
+		int count = 1;
+		if ( str[i] == str[i + 1]) {  // some also use while loop 
+			count++;
+			i++;
+		}
+
+		if (count > 1) {
+			cout << str[i] << ", count = " << count << endl;
+		}
+	}
+
