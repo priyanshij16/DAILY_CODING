@@ -1,0 +1,34 @@
+Maximum subarray sum after K concatenation
+
+#include <bits/stdc++.h> 
+long long maxSubSumKConcat(vector<int> &arr, int n, int k)
+{
+	// Write your code here.
+	long long ele= 0, max_ele= INT_MIN;
+	int size=n*k;
+	int concat[size];
+
+	for(int i=0,j=0;j<size;i++){
+		if(i==n)
+		{
+			i=0;
+		}
+		concat[j]=arr[i];
+		j++;
+	
+	}
+	 for(int i = 0 ; i < size ; i++){
+
+     ele += concat[i];
+
+max_ele = max(max_ele,ele);
+
+if (ele < 0) {
+
+ele = 0;
+
+}
+
+}  return max_ele;
+	
+}
