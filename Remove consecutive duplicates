@@ -1,0 +1,24 @@
+Remove consecutive duplicates
+
+Input:   aaaaaabaabccccccc
+Output:  ababc
+stack<int>st;
+        
+        for(int i=0;i<n;i++)
+        {
+            if( st.empty() ){
+             st.push(s[i]);   
+            }
+            else if(st.top() != s[i])
+            { 
+                st.push(s[i]);
+            }
+        }
+         string res="";
+        while(!st.empty()){
+            res+= st.top();
+            st.pop();
+        }
+        reverse(res.begin(), res.end());
+         return res;
+
