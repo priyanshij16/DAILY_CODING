@@ -1,0 +1,14 @@
+Delete middle element of a stack
+
+int count =0;
+
+if(count == sizeOfStack/2){
+         s.pop(); //<--mid element
+        }
+        else{
+           int top = s.top();  s.pop(); 
+           count++; 
+           deleteMid(s, sizeOfStack);  //calling untill count is equal to the mid index
+           s.push(top);
+        }
+    }
