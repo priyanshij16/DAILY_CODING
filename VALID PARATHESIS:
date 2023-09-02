@@ -1,0 +1,17 @@
+20 .VALID PARATHESIS:
+
+stack<int> t;
+       
+        for(auto i : s){
+            if(i=='(' || i== '{' || i== '[')
+                t.push(i);
+            
+else{   if(t.empty() or (t.top()=='(' and i!=')')
+         or (t.top()=='{' and i!='}') 
+         or (t.top()=='[' and i!=']')) 
+         return false;
+     t.pop();
+                
+            }
+        }
+        return t.empty();
