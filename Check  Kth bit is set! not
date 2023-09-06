@@ -1,0 +1,9 @@
+Check if Kth bit is set or not
+
+ 
+  int p = (1 << k);
+  if ((n & p) != 0) {
+    cout << "YES" << "\n";
+  } else {
+    cout << "NO" << "\n";
+  }
