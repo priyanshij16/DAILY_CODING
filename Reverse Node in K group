@@ -1,0 +1,35 @@
+Reverse Node in K group:
+
+APPROACH SOLVED BY RECURSION >> consider ex of 1 2 3 4 5 here k=2 just solve 1 2 i.e reverse it and rest recursion will solve 
+
+// this is just reverse function of reverse :
+
+ ListNode* reverse(ListNode* first, ListNode* last)
+    {
+        ListNode* prev = nullptr;
+        ListNode* end_next = last->next;
+        while ( first != end_next )
+        {
+            auto tmp = first->next;
+            first->next = prev;
+            prev = first;
+            first = tmp;       
+        }
+        return last;
+    }
+
+class Solution {
+public:
+    ListNode* reverseKGroup(ListNode* head, int k) {
+         ListNode*curr=head;
+         
+         for(int i=0; i<k;i++){
+             if(!curr) return head;
+             curr= curr->next; // 1 2 
+
+         }
+         auto connect= reverse(head, curr);// first pass 1 2
+         head->next= reverseKGroup(head, k);// call k times
+         return connect;
+    }
+};
