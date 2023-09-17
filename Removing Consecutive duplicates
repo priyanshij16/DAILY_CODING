@@ -1,0 +1,38 @@
+Input:
+aaabbaaccd
+
+Output: 
+ad
+
+class Solution
+{
+    public:
+    //Function to remove pair of duplicates from given string using Stack.
+    string removePair(string str)
+    {
+        // Your code here
+        stack<int> st;
+        int n= str.length();
+        string res="";
+        
+        for(int i=0;i<n;i++){
+            if(st.empty())
+            {
+                st.push(str[i]);
+            }
+            else if(st.top()== str[i])
+            {
+                st.pop();
+            }
+            else{
+                st.push(str[i]);
+            }
+        }
+        while(!st.empty()){
+            res+= st.top();
+            st.pop();
+            
+        }
+        reverse(res.begin(), res.end());
+        return res;
+    }
