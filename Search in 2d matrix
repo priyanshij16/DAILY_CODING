@@ -1,0 +1,20 @@
+Search in a 2D Matrix
+
+ brute approach>> O(mn) 
+ traverse each ele and find
+
+    ### 2 nd APPROACH :
+
+   int rows = matrix.size(),
+			cols = matrix[0].size(),
+            row = 0, col = cols - 1;
+			
+        while (row < rows && col > -1) {
+            int cur = matrix[row][col];
+            if (cur == target) return true;
+            if (target > cur) row++;
+            else col--;
+        }
+        
+        return false;
+    }
