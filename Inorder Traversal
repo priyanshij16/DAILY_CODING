@@ -1,0 +1,8 @@
+ // it follows >> left root right:
+vector<int> res;
+ if(root){
+            inOrder(root->left);
+            res.push_back(root->data);
+            inOrder(root->right);
+        }
+        return res;
