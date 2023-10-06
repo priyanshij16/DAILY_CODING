@@ -1,0 +1,40 @@
+Approach-1
+
+ Node*temp;
+      queue<Node*>q;
+      vector<int>v;
+      
+      q.push(node); // push root
+      while(!q.empty()){
+          temp= q.front();
+          q.pop();
+          v.push_back(temp->data);
+          
+          if(temp->left)
+          q.push(temp->left);
+          if(temp->right)
+          q.push(temp->right);
+      }
+      return v;
+
+Approach-2 for printing line by line>>>>
+vector<vector<int>> vec;
+  queue<Node*> q;
+  q.push(node);
+  while(!q.empty()){
+      int size=q.size();
+      vector<int> vv;
+      for(int i=0;i<size;i++){
+          Node* root=q.front();
+          q.pop();
+          vv.push_back(root->data);
+          if(root->left){
+              q.push(root->left);
+          }
+          if(root->right){
+              q.push(root->right);
+          }
+      }
+      vec.push_back(vv);
+  }
+  return vec;
