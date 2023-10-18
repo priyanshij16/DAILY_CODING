@@ -1,0 +1,22 @@
+a = 2 20 30 40
+b= 30 40 90
+ o/p= 30 40
+
+ wvector<int> ans;
+        int i=0,j=0;
+        while(i < N && j < M)
+        {
+            if(arr1[i] == arr2[j])
+            {
+                if(ans.size() == 0 || ans.back() < arr1[i])
+                    ans.push_back(arr1[i]);
+                i++;
+                j++;
+            }
+            else if(arr1[i] < arr2[j])
+                i++;
+            else
+                j++;
+        }
+        
+        return ans;
