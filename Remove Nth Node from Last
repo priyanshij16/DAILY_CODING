@@ -1,0 +1,20 @@
+ ex 1  2 3 4 5  here n= 2 
+so output is 1 2 3 5
+
+Approach 1  : just traverse till n-k and break that link 
+approach 2:
+
+  ListNode * start = new ListNode();
+        
+        for(int i = 1; i <= n; ++i)
+            fast = fast->next;
+    
+        while(fast->next != NULL)
+        {
+            fast = fast->next;
+            slow = slow->next;
+        }
+        
+        slow->next = slow->next->next;
+        
+     
