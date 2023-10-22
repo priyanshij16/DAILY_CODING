@@ -1,0 +1,22 @@
+3sum
+ first approach is O n^3 traversing 3 loops 
+  2 nd Approach :
+   On2
+ 
+ set<vector<int>> st;
+
+    for (int i = 0; i < n; i++) {
+        set<int> hashset;
+        for (int j = i + 1; j < n; j++) {
+            //Calculate the 3rd element:
+            int third = -(arr[i] + arr[j]);
+
+            //Find the element in the set:
+            if (hashset.find(third) != hashset.end()) {
+                vector<int> temp = {arr[i], arr[j], third};
+                sort(temp.begin(), temp.end());
+                st.insert(temp);
+            }
+            hashset.insert(arr[j]);
+        }
+    }
